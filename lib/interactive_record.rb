@@ -66,7 +66,7 @@ class InteractiveRecord
         SELECT * FROM #{table_name}
         WHERE #{option.keys[0].to_s} = ?
         SQL
-    DB[:conn].execute(sql, options.values[0])
+    DB[:conn].execute(sql, option.values[0])
   end
 
 end
