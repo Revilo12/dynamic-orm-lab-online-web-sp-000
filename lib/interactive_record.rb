@@ -58,6 +58,6 @@ class InteractiveRecord
         WHERE name = ?
         SQL
     Student.new(DB[:conn].execute(sql, name))
-
+  end
 
 end
