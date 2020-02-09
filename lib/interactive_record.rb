@@ -67,6 +67,7 @@ class InteractiveRecord
         SELECT * FROM #{table_name}
         WHERE #{option.keys[0].to_s} = #{option[key]}
         SQL
+    binding.pry
     DB[:conn].execute(sql)
   end
 
