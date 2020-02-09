@@ -64,10 +64,10 @@ class InteractiveRecord
   def self.find_by(option)
     sql  = <<-SQL
         SELECT * FROM #{table_name}
-        WHERE #{table_name}.? = ?
+        WHERE ? = ?
         SQL
     binding.pry
-    DB[:conn].execute(sql, option.keys[0].to_s, option.values[0])
+    DB[:conn].execute(sql, option.keys[0], option.values[0])
   end
 
 end
