@@ -12,4 +12,15 @@ class InteractiveRecord
     sql = <<-SQL
         PRAGMA table_info(?)
         SQL
+
+    info_hash = DB[:conn].execute(sql, self.table_name)
+
+    column_names = []
+
+    info_hash.each do |column|
+      column_names << column["name"]
+    end
+
+    column_names.flatten
+  end
 end
