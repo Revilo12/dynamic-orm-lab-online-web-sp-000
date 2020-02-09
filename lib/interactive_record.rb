@@ -62,7 +62,7 @@ class InteractiveRecord
   end
 
   def self.find_by(option)
-    key = option.key[0]
+    key = option.keys[0]
     sql  = <<-SQL
         SELECT * FROM #{table_name}
         WHERE #{option.keys[0].to_s} = #{option[key]}
