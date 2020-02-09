@@ -64,9 +64,9 @@ class InteractiveRecord
   def self.find_by(option)
     sql  = <<-SQL
         SELECT * FROM #{table_name}
-        WHERE name = ?
+        WHERE ? = ?
         SQL
-    DB[:conn].execute(sql, option.values[0])
+    DB[:conn].execute(sql, options.keys[0], option.values[0])
   end
 
 end
