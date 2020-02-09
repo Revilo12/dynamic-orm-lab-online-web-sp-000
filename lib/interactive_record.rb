@@ -13,7 +13,7 @@ class InteractiveRecord
         PRAGMA table_info(?)
         SQL
 
-    info_hash = DB[:conn].execute(sql, self.table_name)
+    info_hash = DB[:conn].execute(sql, table_name)
 
     column_names = []
 
