@@ -21,6 +21,6 @@ class InteractiveRecord
       column_names << column["name"]
     end
 
-    column_names.flatten
+    column_names.compact
   end
 end
